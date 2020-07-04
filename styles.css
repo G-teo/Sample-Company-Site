@@ -1,0 +1,407 @@
+/* CSSのリセット（消さないでください） */
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6,a,p, div, img,span,dl,dt,dd{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color:#d2d2d2;
+  font-size:16px;
+  color:#666;
+}
+.container{
+  background-color:#fff;
+  margin:0 auto;
+  max-width:1200px;
+}
+
+/* header */
+/* logo部分 */
+.header-logo{
+  height:100px;
+  border-top:5px solid blue;
+  position:relative;
+}
+.header-logo-img{
+  width:300px;
+  /* 親要素から見て位置を指定 */
+  position: absolute;
+  top:50%;
+  left:4%;
+  /* 子要素から見て位置を指定 */
+  transform:translateY(-50%);
+}
+/* nav部分 */
+.header-nav{
+  border-top:1px solid #d2d2d2;
+}
+.header-nav a{
+  text-decoration:none;
+}
+.header-nav-ul{
+  height:64px;/* nav-listと高さを揃える */
+  letter-spacing:-0.4em;/* listとlistの間に改行が入っているため、その隙間を出来るだけ小さくする */
+}
+.header-nav-list{
+  list-style-type:none;
+  /* 横並びになるブロック要素 ※そのままだとブロック要素なので画面いっぱいの幅になるため、インライン要素を加えて改行なしにする */
+  display:inline-block; 
+  height:64px;/* positionを使用したことにより、高さが0になってしまうため、枠を確保する */
+  width:calc(100%/6);
+  border-right:1px solid #d2d2d2;
+  box-sizing:border-box;
+  letter-spacing:normal;
+  position:relative;
+}
+.header-nav-list-last{
+  border-right:none;
+}
+.header-nav-box{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+}
+.header-top{
+  margin-bottom:4px;
+  font-size:15px;
+  color:#666;
+}
+.header-bottom{
+  font-size:10px;
+  color:#bababa;
+  text-align:center;
+}
+.header-nav-list:hover,.current{
+  transition:.6s;
+  background-color:rgba(230,235,250,.9);
+}
+.header-nav-list:hover::before,.current::before{
+  content:"　";
+  position:absolute;
+  top:10px;
+  left:5px;
+  width:2px;
+  height:40px;
+  background-color:blue;
+}
+/* main-image部分 */
+.header-main-img{
+  height:auto;
+  max-width:100%;
+  padding-bottom:30px;
+}
+/* headerここまで */
+
+/* mainとsideの枠 */
+.contents{
+  padding:40px;
+}
+.color{
+  color:red;
+}
+
+/* main */
+.main{
+  float:left;
+  width:70%;
+  padding-right:35px;
+  font-size:15px;
+}
+.main-section{
+  margin-bottom:60px;
+}
+.main-title{
+  border-radius:5px;
+  padding:10px 0px;
+  background-color:blue;
+}
+.main-title h2{
+  padding-left:20px;
+  font-size:18px;
+  color:white;
+  font-weight:normal;
+}
+.main-title h2::first-letter{
+  border-left:3px solid #8e9eef;
+  padding-left:16px;
+}
+.main-definition{
+  margin:16px;
+}
+.main-date{
+  padding:8px 32px 8px 0;
+  float:left;
+  color:blue;
+  letter-spacing:1.5px;
+}
+.main-description{
+  border-bottom:1px solid #d2d2d2;
+  padding:8px;
+}
+.main-new{
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 11px;
+  color:#fff;
+  background-color: red;
+}
+.main-pastlog{
+  padding: 16px;
+  text-align:right;
+}
+.main-pastlog a{
+  color:#666;
+} 
+.main-subtitle{
+  padding:10px 0px;
+  border:1px solid rgb(208,208,208);
+  border-radius:5px;
+  margin-top:20px;
+  margin-bottom:10px;
+  background:linear-gradient(#fff,#eee);
+}
+.m-title{
+  margin-top:20px;
+  margin-bottom:10px;
+}
+.main-subtitle h3{
+  font-size:18px;
+  margin-left:20px;
+  color:#666;
+  font-weight:normal;
+}
+.main-section p{
+  padding:0 20px;
+  font-size:15px;
+  line-height:2;;
+}
+.main-section a{
+  color:#666;
+}
+.alert{
+  display:inline-block;
+  margin-top:10px;
+}
+/*  */
+/* side */
+.side{
+  /* background-color:green; */
+  float:right;
+  width:25%;
+  font-size:16px;
+}
+.side-fram{
+  margin-top:30px;
+  border:1px solid #ccc;
+  padding:10px;
+  background:linear-gradient(#fff,#eee);
+}
+.side-fram:first-child{
+  margin-top:0px;
+}
+.side-title{
+  border-top:5px solid blue;
+  border-bottom:1px solid #d2d2d2;
+  background-color:#eee;
+}
+.side-title h4{
+  padding:20px 10px;
+  font-weight:500;
+}
+.side-list{
+  list-style-type:none;
+  border-bottom:1px solid #d2d2d2;
+  padding:15px;
+}
+.side-list:hover{
+  background-color:white;
+}
+.side-list a{
+  text-decoration:none;
+  color:#666;
+}
+.side-list:hover a{
+  color:blue;
+}
+.side-box{
+  margin-top:30px;
+  background:#fff;
+}
+.side-list img{
+  float:left;
+  width:20%;
+  margin-right:5px;
+  overflow:hidden;
+}
+.side-menu-top{
+  color:blue;
+  font-size:11px;
+}
+.side-menu-bottom{
+  font-size:11px;
+}
+.side-company{
+  padding-top:5px;
+  text-align:center;
+}
+.side-name{
+  color:#666;
+}
+.side-address{
+  font-size:14px;
+}
+/*  */
+/* mainとsideのfloatの解除 */
+.clear{
+  clear:both;
+}
+
+/*  */
+/* footer */
+footer{
+  text-align:center;
+  margin-top:40px;
+  padding:20px 0px;
+  background-color:blue;
+  font-size:12px;
+  color:#fff
+}
+footer a{
+  text-decoration:none;
+  color:#fff;
+}
+
+/*  */
+/*  */
+/*  */
+
+/* company.html */
+/* header(設定調整) */
+.header2{
+  border-bottom:1px solid #d2d2d2;
+}
+
+/* main */
+.main-section table{
+  width:100%;
+  margin-top:20px;
+  border-collapse: collapse;
+}
+.main-section table td,.main-section table th{
+  border:1px solid #d2d2d2;
+  padding:15px 20px;
+  font-size:15px;
+}
+.td-left{
+  width:20%;
+  text-align:center;
+}
+.gray-span{
+  padding:5px 10px;
+  color:#444;
+  background-color:rgba(181, 178, 178, 0.7);
+  border-radius:5px;
+}
+.c_main-para{
+  margin-top:20px;
+}
+
+.s_main-para{
+  margin-top:10px;
+}
+.s_main-section a{
+  text-decoration:none;
+}
+.s_card{
+  margin:20px 0;
+  border:1px solid #ccc;
+  box-shadow:0px 5px 10px #ccc; /*上 右 下の設定*/ 
+  padding:20px;
+  background:linear-gradient(#fff,#ddd);
+  overflow:hidden;
+  position:relative;
+}
+.s_card:hover{
+  box-shadow:0px 10px 20px #ccc;
+  transform:translateY(-5px);
+  background:#fff;
+  transition:.3s;
+}
+.s_card img{
+  float:left;
+  width:25%;
+  margin-right:20px;
+}
+.s_card h4{
+  color:blue;
+  font-weight:normal;
+  font-size:18px;
+  line-height:2;
+}
+.s_card::before{
+  content:"→";
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:30px;
+  line-height:30px;
+  border-radius:4px;
+  text-align:center;
+  color:#fff;
+  background-color:#666;
+}
+.s_card p{
+  padding:0;
+}
+.s_card_no-link{
+  margin:20px 0;
+  border:1px solid #ccc;
+  box-shadow:0px 5px 10px #ccc; /*上 右 下の設定*/ 
+  padding:20px;
+  background:linear-gradient(#fff,#ddd);
+  overflow:hidden;
+  position:relative;
+}
+.s_card_no-link h4{
+  color:blue;
+  font-weight:normal;
+  font-size:18px;
+  line-height:2;
+}
+.s_card_no-link p{
+  padding:0;
+}
+
+.main-section table th{
+  font-weight:normal;
+  text-align:left;
+}
+
+.l_main-para,.cont_main-para{
+  margin-top:20px;
+}
+
+.main-section .cont_td-left{
+  width:25%;
+  vertical-align:middle;
+}
+.cont_input{
+  width:60%;
+}
+.cont_textarea{
+  width:90%;
+  height:150px;
+}
+.btn{
+  text-align:center;
+}
+button{
+  margin-top:10px;
+  border-radius:5px;
+  padding:5px 10px;
+  font-size:15px;
+  background:linear-gradient(#fff,#eee);
+}
